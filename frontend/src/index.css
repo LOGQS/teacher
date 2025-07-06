@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ios-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-card hover:bg-ios-tertiary-dark text-dark-text font-medium py-3 px-6 rounded-xl transition-all duration-200 border border-dark-border hover:border-ios-gray;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-dark-card text-dark-text font-medium py-3 px-6 rounded-xl transition-all duration-200 hover:shadow-lg;
+  }
+  
+  .card {
+    @apply bg-dark-card border border-dark-border rounded-2xl shadow-ios-dark backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-xl hover:scale-105 transition-all duration-200;
+  }
+  
+  .input-field {
+    @apply bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-dark-text placeholder-dark-text-secondary focus:border-ios-blue focus:outline-none focus:ring-2 focus:ring-ios-blue/20 transition-all duration-200;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-lg bg-dark-card/80 border border-dark-border/50;
+  }
+  
+  .section-title {
+    @apply text-2xl font-bold text-dark-text mb-2;
+  }
+  
+  .section-subtitle {
+    @apply text-dark-text-secondary mb-6;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-dark-border rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-ios-blue to-ios-accent transition-all duration-300 ease-out;
+  }
+  
+  .loading-spinner {
+    @apply inline-block w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin;
+  }
+  
+  .ios-switch {
+    @apply relative inline-block w-12 h-6 bg-dark-border rounded-full cursor-pointer transition-colors duration-200 ease-in-out;
+  }
+  
+  .ios-switch input {
+    @apply sr-only;
+  }
+  
+  .ios-switch input:checked + .ios-switch-slider {
+    @apply bg-ios-blue;
+  }
+  
+  .ios-switch input:checked + .ios-switch-slider:before {
+    @apply translate-x-6;
+  }
+  
+  .ios-switch-slider {
+    @apply absolute top-0 left-0 right-0 bottom-0 bg-dark-border rounded-full transition-colors duration-200 ease-in-out;
+  }
+  
+  .ios-switch-slider:before {
+    @apply absolute content-[''] h-5 w-5 left-0.5 top-0.5 bg-white rounded-full transition-transform duration-200 ease-in-out;
+  }
+  
+  .slide-enter {
+    @apply opacity-0 transform translate-y-4;
+  }
+  
+  .slide-enter-active {
+    @apply opacity-100 transform translate-y-0 transition-all duration-300 ease-out;
+  }
+  
+  .slide-exit {
+    @apply opacity-100 transform translate-y-0;
+  }
+  
+  .slide-exit-active {
+    @apply opacity-0 transform -translate-y-4 transition-all duration-300 ease-in;
+  }
+  
+  .gradient-border {
+    @apply bg-gradient-to-r from-ios-blue to-ios-accent p-0.5 rounded-xl;
+  }
+  
+  .gradient-border-content {
+    @apply bg-dark-card rounded-xl h-full w-full;
+  }
+  
+  /* Custom slider styles */
+  .slider {
+    @apply appearance-none bg-dark-border rounded-lg h-2 outline-none cursor-pointer;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 bg-ios-blue rounded-full cursor-pointer shadow-lg;
+  }
+  
+  .slider::-moz-range-thumb {
+    @apply w-5 h-5 bg-ios-blue rounded-full border-none cursor-pointer shadow-lg;
+  }
+  
+  .slider::-webkit-slider-thumb:hover {
+    @apply bg-blue-600;
+  }
+  
+  .slider::-moz-range-thumb:hover {
+    @apply bg-blue-600;
+  }
+  
+  /* Markdown content styles */
+  .message-content {
+    @apply text-dark-text-secondary;
+  }
+  
+  .message-content h1,
+  .message-content h2,
+  .message-content h3,
+  .message-content h4,
+  .message-content h5,
+  .message-content h6 {
+    @apply text-dark-text;
+  }
+  
+  .message-content p {
+    @apply mb-2 last:mb-0;
+  }
+  
+  .message-content ul,
+  .message-content ol {
+    @apply mb-2 last:mb-0;
+  }
+  
+  .message-content li {
+    @apply mb-1 last:mb-0;
+  }
+  
+  .message-content pre {
+    @apply mb-2 last:mb-0;
+  }
+  
+  .message-content blockquote {
+    @apply mb-2 last:mb-0;
+  }
+  
+  .message-content table {
+    @apply mb-2 last:mb-0;
+  }
+  
+  /* KaTeX styles for math rendering */
+  .katex {
+    @apply text-dark-text;
+  }
+  
+  .katex-display {
+    @apply my-2;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-ios-blue to-ios-accent bg-clip-text text-transparent;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
+  }
+  
+  .shadow-glow-accent {
+    box-shadow: 0 0 20px rgba(52, 199, 89, 0.3);
+  }
+  
+  .ios-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.4s ease-out;
+}
+
+/* Smooth scrolling for iOS */
+.ios-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  outline: 2px solid theme('colors.ios-blue');
+  outline-offset: 2px;
+}
+
+/* Custom selection */
+::selection {
+  background-color: theme('colors.ios-blue');
+  color: white;
+}
+
+/* Disable tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}

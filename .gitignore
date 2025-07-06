@@ -1,0 +1,9 @@
+.*/
+extra/
+*_example.py
+node_modules/
+frontend/node_modules/
+*.md
+_pycache_/
+modules/__pycache__
+.env
